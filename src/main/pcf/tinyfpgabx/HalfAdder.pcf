@@ -1,0 +1,9 @@
+set_io --warn-no-port clock B2 # 16MHz clock
+
+set_io --warn-no-port reset H9 # 14
+
+set_io --warn-no-port io_a A2 # 1
+set_io --warn-no-port io_b A1 # 2
+
+set_io --warn-no-port io_sum B1 # 3
+set_io --warn-no-port io_carryOut C2 # 4
