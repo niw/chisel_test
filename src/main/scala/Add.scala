@@ -9,22 +9,20 @@ class Add(val w: Int) extends Module {
     val carryOut = Output(UInt(1.W))
   })
 
-  private val fullAdders = VecInit(Seq.fill(w) {
+  private val fullAdderIOs = VecInit(Seq.fill(w) {
     Module(new FullAdder).io
   })
-
-  private val carries = Wire(Vec(w + 1, UInt(1.W)))
-
   private val sums = Wire(Vec(w, UInt(1.W)))
+  private val carries = Wire(Vec(w + 1, UInt(1.W)))
 
   carries(0) := io.carryIn
   for (i <- 0 until w) {
-    val fullAdder = fullAdders(i)
-    fullAdder.a := io.a(i)
-    fullAdder.b := io.b(i)
-    fullAdder.carryIn := carries(i)
-    sums(i) := fullAdder.sum
-    carries(i + 1) := fullAdder.carryOut
+    val fullAdderIO = fullAdderIOs(i)
+    fullAdderIO.a := io.a(i)
+    fullAdderIO.b := io.b(i)
+    fullAdderIO.carryIn := carries(i)
+    sums(i) := fullAdderIO.sum
+    carries(i + 1) := fullAdderIO.carryOut
   }
 
   io.sum := sums.asUInt()
