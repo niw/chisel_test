@@ -9,3 +9,4 @@ scalacOptions += "-Xsource:2.11"
 
 libraryDependencies += "edu.berkeley.cs" %% "chisel3" % "3.4.3"
 libraryDependencies += "edu.berkeley.cs" %% "chiseltest" % "0.3.4" % "test"
+libraryDependencies += "edu.berkeley.cs" %% "chisel-iotesters" % "1.5.3" % "test"

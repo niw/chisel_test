@@ -3,5 +3,6 @@
 .idea
 .vscode
 /out
+/test_run_dir
 /project
 /target

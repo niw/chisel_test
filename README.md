@@ -14,6 +14,7 @@ Build tool are required separately.
 - [nextpnr](https://github.com/YosysHQ/nextpnr)
 - [tinyprog](https://github.com/tinyfpga/TinyFPGA-Bootloader/tree/master/programmer) (for TinyFPGA BX)
 - [dfu-util](http://dfu-util.sourceforge.net/) (for OrangeCrab)
+- [verilator](https://www.veripool.org/verilator/) (for unit tests)
 
 Usage
 -----
