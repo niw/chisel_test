@@ -1,6 +1,6 @@
 import chisel3._
 
-class Adder(val w: Int) extends Module {
+class Add(val w: Int) extends Module {
   val io = IO(new Bundle {
     val a = Input(UInt(w.W))
     val b = Input(UInt(w.W))

@@ -8,10 +8,10 @@ import scala.util.Random
 
 // NOTE: `chiseltest` (`chisel-tester2`) is currently alpha.
 // `chisel3.iotesters` (`chisel-testers`) may be better for testing.
-// See `AdderTest.scala` as well.
+// See `AddTest.scala` as well.
 
-class AdderTestWithChiselTest extends FunSuite with Matchers with ChiselScalatestTester {
-  private def testAdder(c: Adder) {
+class AddTestWithChiselTest extends FunSuite with Matchers with ChiselScalatestTester {
+  private def testAdd(c: Add) {
     val rnd = new Random()
     rnd.setSeed(0L)
     for (_ <- 0 until 10) {
@@ -27,11 +27,11 @@ class AdderTestWithChiselTest extends FunSuite with Matchers with ChiselScalates
     }
   }
 
-  test("Adder adds inputs") {
-    test(new Adder(2))(testAdder)
+  test("Add should add inputs") {
+    test(new Add(4))(testAdd)
   }
 
-  test("Adder adds inputs with Verilator") {
-    test(new Adder(2)).withAnnotations(Seq(VerilatorBackendAnnotation))(testAdder)
+  test("Add should add inputs with Verilator") {
+    test(new Add(4)).withAnnotations(Seq(VerilatorBackendAnnotation))(testAdd)
   }
 }

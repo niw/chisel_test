@@ -2,10 +2,10 @@ import chisel3._
 import chisel3.iotesters.{ChiselRunners, SteppedHWIOTester}
 import org.scalatest.{FunSuite, Matchers}
 
-class AdderTest extends FunSuite with Matchers with ChiselRunners {
-  test("Adder adds inputs") {
+class AddTest extends FunSuite with Matchers with ChiselRunners {
+  test("Add should add inputs") {
     assertTesterPasses(new SteppedHWIOTester {
-      val device_under_test = Module(new Adder(2))
+      val device_under_test = Module(new Add(4))
       private val c = device_under_test
 
       rnd.setSeed(0L)
