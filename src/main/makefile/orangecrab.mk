@@ -17,7 +17,8 @@ $(OUTPUT_DIR)/$(TOP_MODULE).config: $(OUTPUT_DIR)/$(TOP_MODULE).json $(LPF_SRC_D
     --package CSFBGA285 \
     --json $(OUTPUT_DIR)/$(TOP_MODULE).json \
     --lpf $(LPF_SRC_DIR)/$(TOP_MODULE).lpf \
-    --textcfg $@
+    --textcfg $@ \
+    $(NEXTPNR_ARGS)
 
 %.bit: %.config
 	ecppack --compress --freq 38.8 --input $< --bit $@

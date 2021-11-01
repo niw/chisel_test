@@ -1,5 +1,6 @@
 import chisel3._
 
+// Need `CHISEL_ARGS=--no-check-comb-loops NEXTPNR_ARGS=--ignore-loops` to `make`.
 class FlipFlop extends Module {
   val io = IO(new Bundle {
     val data = Input(Bool())

@@ -17,7 +17,8 @@ $(OUTPUT_DIR)/$(TOP_MODULE).asc: $(OUTPUT_DIR)/$(TOP_MODULE).json $(PCF_SRC_DIR)
 	--package cm81 \
 	--json $(OUTPUT_DIR)/$(TOP_MODULE).json \
 	--pcf $(PCF_SRC_DIR)/$(TOP_MODULE).pcf \
-	--asc $@
+	--asc $@ \
+	$(NEXTPNR_ARGS)
 
 %.bin: %.asc
 	icepack $< $@
